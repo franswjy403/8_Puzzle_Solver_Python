@@ -12,7 +12,7 @@ def depth_limited_search(initial_state, depth):
     while (stack):
         node = stack.pop()
         explored.append(node.state)
-        if (node.depth < depth_limit):
+        if (node.path_cost < depth_limit):
             children = node.generate_child()
             for child in children:
                 if child.state not in explored:
