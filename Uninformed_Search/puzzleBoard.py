@@ -75,6 +75,5 @@ class Puzzle:
         while path.parent != None:
             path = path.parent
             solution.append(path.action)
-        solution = solution[:-1]
         solution.reverse()
         return solution
