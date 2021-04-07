@@ -4,8 +4,7 @@ class Puzzle:
     evaluation_function=None
     needs_hueristic=False
     num_of_instances=0
-    def __init__(self,state,parent,action,path_cost,depth,needs_hueristic=False):
-        self.depth=depth
+    def __init__(self,state,parent,action,path_cost,needs_hueristic=False):
         self.parent=parent
         self.state=state
         self.action=action
@@ -65,7 +64,7 @@ class Puzzle:
                 new_state[x], new_state[x-1] = new_state[x-1], new_state[x]
             elif action == 'R':
                 new_state[x], new_state[x+1] = new_state[x+1], new_state[x]
-            children.append(Puzzle(new_state,self,action,1,self.depth+1,self.needs_hueristic))
+            children.append(Puzzle(new_state,self,action,1,self.needs_hueristic))
         return children
 
     def find_solution(self):
